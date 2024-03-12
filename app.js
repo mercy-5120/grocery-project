@@ -11,13 +11,22 @@ let editElement
 let editFlag=false
 let editId=""
 //event listeners
-form.addEventListener("submit")
-clearBtn.addEventListener("click")
+form.addEventListener("submit",addItems)
+//clearBtn.addEventListener("click")
 //load items
-window.addEventListener("DOMContentLoaded")
+//window.addEventListener("DOMContentLoaded")
 //functions
 function addItems(e){
-    e.preventDefault()
-    const value=grocery.value
-    
+  e.preventDefault()
+  const value =grocery.value
+  const id =new Date().getTime().toString()
+  if(value !== "" && editFlag===false){
+    console.log('An item has been added to your list')
+  }
+  else if(value !=="" && editFlag===true){
+    console.log('Editing')
+  }
+  else{
+    console.log('Trying to submit an empty form')
+  }
 }
